@@ -11,7 +11,7 @@ const text = (input) => {
     if (!input) return;
 
     if (isMdast(input)) {
-        input = remark().stringify(input);
+        input = md(input);
     }
     
     return removeMd(input).trim();
@@ -21,10 +21,20 @@ const html = (input) => {
     if (!input) return;
 
     if (isMdast(input)) {
-        input = remark().stringify(input);
+        input = md(input);
     }
 
     return remark().use(remarkHtml).process(input).contents.trim();
+}
+
+const md = (input) => {
+    if (!input) return;
+
+    if (isMdast(input)) {
+        input = remark().stringify(input);
+    }
+
+    return input.trim();
 }
 
 // shortcuts
@@ -70,7 +80,7 @@ const isMdast = (input) => {
 
 export default {
     // helpers
-    ast, text, html,
+    ast, text, html, md,
 
     // shortcuts
     isType, isDepth, hasChildren,

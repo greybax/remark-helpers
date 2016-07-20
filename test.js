@@ -1,4 +1,4 @@
-import { ast, text, html } from "./index";
+import { ast, text, html, md } from "./index";
 import should from "should";
 
 
@@ -16,4 +16,8 @@ it('text', ()=> {
 
 it('html', ()=> {
   html(input).should.be.equal('<h1>header <del>removed string</del></h1>');
+});
+
+it('md', ()=> {
+  md(input).should.be.equal('# header ~~removed string~~');
 });

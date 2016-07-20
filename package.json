@@ -1,6 +1,6 @@
 {
   "name": "remark-helpers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Helper methods for remark",
   "main": "index.es5.js",
   "scripts": {

@@ -62,6 +62,14 @@ Return AST tree for current text.
 
 Type: `string`
 
+### md(input)
+
+Return markdown for current input text.
+
+##### input
+
+Type:  `string` / `AST`
+
 
 ### Bunch of shortcut helpers. Based on [MDAST](https://github.com/wooorm/mdast)
 
