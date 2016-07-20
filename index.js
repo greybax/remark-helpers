@@ -9,12 +9,20 @@ const ast = input =>
 
 const text = (input) => {
     if (!input) return;
+
+    if (isMdast(input)) {
+        input = remark().stringify(input);
+    }
     
     return removeMd(input).trim();
 }
 
 const html = (input) => {
     if (!input) return;
+
+    if (isMdast(input)) {
+        input = remark().stringify(input);
+    }
 
     return remark().use(remarkHtml).process(input).contents.trim();
 }
@@ -51,6 +59,14 @@ const isFootnoteReference = node => isType(node, 'footnoteReference');
 const isDefinition = node => isType(node, 'definition');
 const isFootnoteDefinition = node => isType(node, 'footnoteDefinition');
 const isText = node => isType(node, 'Text');
+
+// special
+const isMdast = (input) => {
+    if (!input) return;
+
+    return isRoot(input) || hasChildren(input);
+}
+
 
 export default {
     // helpers
