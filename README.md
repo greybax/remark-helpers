@@ -6,7 +6,7 @@
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
-Basically, with remark-helpers you can find desire elements in markdown document
+Basically, with `remark-helpers` you can find desire elements in markdown document
 and process them in html or plaintext format.
 
 Bunch of helpers for working with [remark][remark-readme].
@@ -31,6 +31,7 @@ var md = require('remark-helpers');
 md.ast('# title');          // mdast format see more https://github.com/wooorm/mdast
 md.html(`*italic*`);        // <p><em>italic</em></p>
 md.text('**`plaintext`**'); // plaintext
+md.md(some_mdast_tree);     // markdown text
 ```
 
 [Look into tests for more examples](tests).

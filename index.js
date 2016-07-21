@@ -3,7 +3,7 @@ import remarkHtml from "remark-html";
 import removeMd from "remove-markdown";
 
 const ast = input =>
-    typeof input === 'string'
+    typeof input === 'string' && !isMdast(input)
         ? remark().parse(input)
         : input;
 
