@@ -7,15 +7,15 @@ const input = `
 `;
 
 const mdast = {
-  "type": "root",
-  "children": [
+  type: "root",
+  children: [
     {
-      "type": "heading",
-      "depth": 1,
-      "children": [
+      type: "heading",
+      depth: 1,
+      children: [
         {
-          "type": "text",
-          "value": "header"
+          type: "text",
+          value: "header"
         }
       ]
     }

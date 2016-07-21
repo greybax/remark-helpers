@@ -68,7 +68,7 @@ const isImageReference = node => isType(node, 'imageReference');
 const isFootnoteReference = node => isType(node, 'footnoteReference');
 const isDefinition = node => isType(node, 'definition');
 const isFootnoteDefinition = node => isType(node, 'footnoteDefinition');
-const isText = node => isType(node, 'Text');
+const isText = node => isType(node, 'text');
 
 // special
 const isMdast = (input) => {
