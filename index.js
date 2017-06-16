@@ -24,7 +24,7 @@ const html = (input) => {
         input = md(input);
     }
 
-    return remark().use(remarkHtml).process(input).contents.trim();
+    return remark().use(remarkHtml).processSync(input).contents.trim();
 }
 
 const md = (input) => {
