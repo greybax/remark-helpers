@@ -3,38 +3,38 @@ import remarkHtml from "remark-html";
 import removeMd from "remove-markdown";
 
 const ast = input =>
-    typeof input === 'string' && !isMdast(input)
-        ? remark().parse(input)
-        : input;
+  typeof input === 'string' && !isMdast(input)
+    ? remark().parse(input)
+    : input;
 
 const text = (input) => {
-    if (!input) return;
+  if (!input) return;
 
-    if (isMdast(input)) {
-        input = md(input);
-    }
-    
-    return removeMd(input).trim();
+  if (isMdast(input)) {
+    input = md(input);
+  }
+
+  return removeMd(input).trim();
 }
 
 const html = (input) => {
-    if (!input) return;
+  if (!input) return;
 
-    if (isMdast(input)) {
-        input = md(input);
-    }
+  if (isMdast(input)) {
+    input = md(input);
+  }
 
-    return remark().use(remarkHtml).processSync(input).contents.trim();
+  return remark().use(remarkHtml).processSync(input).contents.trim();
 }
 
 const md = (input) => {
-    if (!input) return;
+  if (!input) return;
 
-    if (isMdast(input)) {
-        input = remark().stringify(input);
-    }
+  if (isMdast(input)) {
+    input = remark().stringify(input);
+  }
 
-    return input.trim();
+  return input.trim();
 }
 
 // shortcuts
@@ -72,21 +72,21 @@ const isText = node => isType(node, 'text');
 
 // special
 const isMdast = (input) => {
-    if (!input) return;
+  if (!input) return;
 
-    return isRoot(input) || hasChildren(input);
+  return isRoot(input) || hasChildren(input);
 }
 
 
 export default {
-    // helpers
-    ast, text, html, md,
+  // helpers
+  ast, text, html, md,
 
-    // shortcuts
-    isType, isDepth, hasChildren,
-    isRoot, isParagraph, isBlockquote, isHeading, isCode, isInlineCode,
-    isYaml, isHtml, isList, isListItem, isTable, isTableRow, isTableCell,
-    isThematicBreak, isBreak, isEmphasis, isStrong, isDelete, isLink, isImage,
-    isFootnote, isLinkReference, isImageReference, isFootnoteReference,
-    isDefinition, isFootnoteDefinition, isText
+  // shortcuts
+  isType, isDepth, hasChildren,
+  isRoot, isParagraph, isBlockquote, isHeading, isCode, isInlineCode,
+  isYaml, isHtml, isList, isListItem, isTable, isTableRow, isTableCell,
+  isThematicBreak, isBreak, isEmphasis, isStrong, isDelete, isLink, isImage,
+  isFootnote, isLinkReference, isImageReference, isFootnoteReference,
+  isDefinition, isFootnoteDefinition, isText
 };

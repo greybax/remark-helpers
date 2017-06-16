@@ -22,28 +22,28 @@ const mdast = {
   ]
 };
 
-it('ast markdown', ()=> {
+it('ast markdown', () => {
   ast(input).should.have.a.property("type").which.is.equal('root');
 });
-it('text markdown', ()=> {
+it('text markdown', () => {
   text(input).should.be.equal('header removed string');
 });
-it('html markdown', ()=> {
+it('html markdown', () => {
   html(input).should.be.equal('<h1>header <del>removed string</del></h1>');
 });
-it('md markdown', ()=> {
+it('md markdown', () => {
   md(input).should.be.equal('# header ~~removed string~~');
 });
 
-it('ast mdast', ()=> {
+it('ast mdast', () => {
   ast(mdast).should.have.a.property("type").which.is.equal('root');
 });
-it('text mdast', ()=> {
+it('text mdast', () => {
   text(mdast).should.be.equal('header');
 });
-it('html mdast', ()=> {
+it('html mdast', () => {
   html(mdast).should.be.equal('<h1>header</h1>');
 });
-it('md mdast', ()=> {
+it('md mdast', () => {
   md(mdast).should.be.equal('# header');
 });
