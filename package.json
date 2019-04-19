@@ -43,7 +43,7 @@
     "should": "^11.2.1"
   },
   "dependencies": {
-    "remark": "^7.0.1",
+    "remark": "^10.0.0",
     "remark-html": "^9.0.0",
     "remove-markdown": "^0.3.0"
   }
